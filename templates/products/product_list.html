@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Product List</h2>
+    <ul>
+        {% if products %}
+            {% for product in products %}
+                <li>
+                    <h3>{{ product.name }}</h3>
+                    <p>Price: {{ product.price }}$</p>
+                    <img src="{{ product.image_url }}">
+                </li>
+                <h3><a href="{% url 'product detail' product.pk %}">{{ product.name }}</a></h3>
+            {% endfor %}
+        {% else %}
+            <p>No products in the shop</p>
+        {% endif %}
+    </ul>
+{% endblock %}

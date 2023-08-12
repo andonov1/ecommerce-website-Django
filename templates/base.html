@@ -7,10 +7,11 @@
     <title>ECOMMERCE</title>
 </head>
 <body>
-    <p>
-        Base template
-    </p>
-    {% block content %}
-    {% endblock %}
+
+<h3><a href="{% url 'products list' %}">Products</a></h3>
+<h3><a href="{% url 'add product' %}">Add product</a></h3>
+
+{% block content %}
+{% endblock %}
 </body>
 </html>
